@@ -20,6 +20,10 @@
                         	<th>No</th>
                             <th>Kode Barang</th>
                             <th>Nama Barang</th>
+                            <th>Stok Awal</th>
+                            <th>Stok Akhir</th>
+                            <th>Barang Keluar</th>
+                            <th>Barang Masuk</th>
                             <th>Keterangan</th>
                             <th>Qty</th>
                             <th>Aksi</th>
@@ -43,6 +47,10 @@
 											<td>'.$no.'</td>
 											<td>'.$data['kode_barang'].'</td>
 											<td>'.$data['nama_barang'].'</td>
+                                            <td>'.$data['stok_awal'].'</td>
+											<td>'.$data['stok_akhir'].'</td>
+                                            <td>'.$data['b_keluar'].'</td>
+											<td>'.$data['b_masuk'].'</td>
 											<td>'.$data['ket'].'</td>
 											<td>'.$data['qty'].'</td>
 											

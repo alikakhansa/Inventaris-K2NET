@@ -110,8 +110,8 @@ include("../inc/kode.php");
 							</ul>
 						</li>
 
-                        <li <?php if ($PAGE=="user") { ?> class="active" <?php  } ?>>
-                                        <a href="?page=user"><i class="fa fa-calendar-check-o"></i> <span>Data Pekerjaan</span></a>
+                        <li>
+                                        <a href="#"><i class="fa fa-calendar-check-o"></i> <span>Data Pekerjaan</span></a>
                                     </li>
 
 

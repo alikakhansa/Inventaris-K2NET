@@ -13,6 +13,7 @@
       $USER         = $ROW['username'];
       $PASS         = $ROW['password'];
       $LEVEL        = $ROW['level'];
+      $TEAM         = $ROW['team'];
       $NAMA         = $ROW['nama'];
 
    }
@@ -53,6 +54,19 @@
                </select>
                </div>
             </div>
+
+            <div class="form-group row mb-4">
+               <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Team</label>
+               <div class="col-sm-9">
+               <select class="form-control select2" name="team" >
+                    <option>Silahkan Pilih Jenis Team</option>
+                        <option value="team 1">Team 1</option>
+                        <option value="team 2">Team 2</option>
+                        <option value="team 3">Team 3</option>
+               </select>
+               </div>
+            </div>
+
           <div class="form-group row mb-4">
                <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Nama Pengguna</label>
                <div class="col-sm-9">

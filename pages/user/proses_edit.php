@@ -4,6 +4,7 @@ $ID       			= mysqli_real_escape_string($koneksi,$_POST['id_login']);
 $USERNAME           = mysqli_real_escape_string($koneksi,$_POST['username']);
 $PASSWORD           = mysqli_real_escape_string($koneksi,$_POST['password']);
 $TIPE_USER          = mysqli_real_escape_string($koneksi,$_POST['level']);
+$TEAM          		= mysqli_real_escape_string($koneksi,$_POST['team']);
 $NAMA          		= mysqli_real_escape_string($koneksi,$_POST['nama']);
 
 if (
@@ -11,6 +12,7 @@ $ID   			== "" ||
 $USERNAME       == "" ||    
 $PASSWORD       == "" ||      
 $TIPE_USER      == "" || 
+$TEAM      	== "" || 
 $NAMA      		== "")
 {
 
@@ -22,6 +24,7 @@ $query = mysqli_query ($koneksi,"UPDATE login SET
 	username 	= '$USERNAME' ,
     password 	= '$PASSWORD' ,
     level 		= '$TIPE_USER' ,
+	team 		= '$TEAM' ,
     nama 		= '$NAMA' WHERE login.id_login='$ID';")
  or die(mysqli_error($koneksi));
 

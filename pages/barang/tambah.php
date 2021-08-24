@@ -34,15 +34,32 @@
                                 <label class="mb-0"><b>Nama Barang</b></label>
                              
                                 <input type="text" class="form-control" name="nama_barang" id="" required/>
-<br>
+                                <br>
+                                <label class="mb-0"><b>Stok Awal</b></label>
+                               
+                               <input type="text" class="form-control"  id="stok_awal" name="stok_awal">
+                               <br>
+                               <label class="mb-0"><b>Stok Akhir</b></label>
+                            
+                               <input type="text" class="form-control" name="stok_akhir" id="" required/>
+                               <br>
+                               <label class="mb-0"><b>Barang Masuk</b></label>
+                            
+                               <input type="text" class="form-control" name="b_masuk" id="" required/>
+                               <br>
+                               <label class="mb-0"><b>Barang Keluar</b></label>
+                               
+                               <input type="text" class="form-control"  id="b_keluar" name="b_keluar">
+                               <br>
+
                                 <label class="mb-0"><b>Keterangan</b></label>
                              
                                 <input type="text" class="form-control" name="ket" id="" required/>
-<br>
+                                <br>
                                 <label class="mb-0"><b>Qty</b></label>
                                 
                                 <input type="text" class="form-control" name="qty" id="" required />
-
+                                <br>
                                 <label class="col-sm-2 col-form-label">&nbsp;</label>
                 <div class="col-sm-10">
                     <input type="submit" name="submit" class="btn btn-primary" value="SIMPAN">

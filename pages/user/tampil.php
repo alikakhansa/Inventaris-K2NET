@@ -3,7 +3,7 @@
                 <div class="row">
             <div class="card-body table-responsive">
 
-                <h5 class="header-title" style="font-size: 20px;">DAFTAR BARANG</h5>
+                <h5 class="header-title" style="font-size: 20px;">DAFTAR USER</h5>
               <a href="?page=user&aksi=tambah"><button type="button" class="btn btn-info">Tambah</button></a>
                <br><br>
                 <div>
@@ -15,6 +15,7 @@
                             <th>Username</th>
                             <th>Password</th>
                             <th>Level</th>
+                            <th>Team</th>
                             <th>Nama Pengguna</th>
                             <th>Aksi</th>
                         </tr>
@@ -39,6 +40,7 @@
                                  <td>'.$data['username'].'</td>
                                  <td>'.$data['password'].'</td>
                                  <td>'.$data['level'].'</td>
+                                 <td>'.$data['team'].'</td>
                                  <td>'.$data['nama'].'</td>
                                  
                                  <td>
