@@ -1,0 +1,2 @@
+<br>
+<div align="center"> <button> <a class="dropdown-item" href="../inc/logout.php">Logout</a></button></div>
