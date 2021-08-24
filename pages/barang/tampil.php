@@ -5,11 +5,11 @@
 <div class="page-title-right">
    <ol class="breadcrumb m-0">
       <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-      <li class="breadcrumb-item active">Barang</li>
+      <li class="breadcrumb-item active">Stok Barang</li>
    </ol>
 </div>
 <br>
-                <h5 class="header-title" style="font-size: 20px;">DAFTAR BARANG</h5>
+                <h5 class="header-title" style="font-size: 20px;">STOK BARANG</h5>
               <a href="?page=barang&aksi=tambah"><button type="button" class="btn btn-info">Tambah</button></a>
                <br><br>
                 <div>

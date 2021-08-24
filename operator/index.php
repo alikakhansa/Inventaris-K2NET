@@ -87,23 +87,38 @@ include("../inc/kode.php");
                                     </li>
 
                                     <li class="submenu">
-                                    <?php if ($PAGE=="barang") { ?> class="active" <?php  } ?>
-                                        <a href="?page=barang"><i class="fa fa-book"></i> <span> Data Barang </span> <span class="menu-arrow"></span></a>
+							<a href="#"><i class="fa fa-book"></i> <span> Data Barang </span> <span class="menu-arrow"></span></a>
 							<ul style="display: none;">
-								<li><a href="invoices.html">Stok Barang</a></li>
+
+								<li><?php if ($PAGE=="barang") { ?> <?php  } ?>
+                                        <a href="?page=barang">Stok Barang</a></li>
 								<li><a href="payments.html">Pengajuan</a></li>
 								
 							</ul>
 						</li>
+
+                        <li class="submenu">
+							<a href="#"><i class="fa fa-cog"></i> <span> Data Alat </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+
+								<li><?php if ($PAGE=="barang") { ?> <?php  } ?>
+                                <?php if ($PAGE=="pinjam") { ?> class="active" <?php  } ?>
+                                        <a href="?page=pinjam">Peminjaman</a></li>
+								<li><li <?php if ($PAGE=="kembali") { ?> class="active" <?php  } ?>>
+                                        <a href="?page=kembali">Pengembalian</a>
+								
+							</ul>
+						</li>
+
+                        <li <?php if ($PAGE=="user") { ?> class="active" <?php  } ?>>
+                                        <a href="?page=user"><i class="fa fa-calendar-check-o"></i> <span>Data Pekerjaan</span></a>
+                                    </li>
+
+
                                       <li <?php if ($PAGE=="sekolah") { ?> class="active" <?php  } ?>>
                                         <a href="?page=sekolah"><i class="fa fa-hospital-o"></i> <span>Data Sekolah</span></a>
                                     </li>
-                                     <li <?php if ($PAGE=="pinjam") { ?> class="active" <?php  } ?>>
-                                        <a href="?page=pinjam"><i class="fa fa-upload"></i> <span>Peminjaman</span></a>
-                                    </li>
-                                      <li <?php if ($PAGE=="kembali") { ?> class="active" <?php  } ?>>
-                                        <a href="?page=kembali"><i class="fa fa-download"></i> <span>Pengembalian</span></a>
-                                    </li>
+                                   
                                  
 
                     </ul>
