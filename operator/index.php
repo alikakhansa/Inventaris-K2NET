@@ -102,7 +102,7 @@ include("../inc/kode.php");
 							<ul style="display: none;">
 
 								<li><?php if ($PAGE=="barang") { ?> <?php  } ?>
-                                <?php if ($PAGE=="pinjam") { ?> class="active" <?php  } ?>
+                                <?php if ($PAGE=="pinjam") { ?> <?php  } ?>
                                         <a href="?page=pinjam">Peminjaman</a></li>
 								<li><li <?php if ($PAGE=="kembali") { ?> class="active" <?php  } ?>>
                                         <a href="?page=kembali">Pengembalian</a>
