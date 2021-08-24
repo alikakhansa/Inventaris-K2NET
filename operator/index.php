@@ -85,9 +85,16 @@ include("../inc/kode.php");
                                     <li <?php if ($PAGE=="user") { ?> class="active" <?php  } ?>>
                                         <a href="?page=user"><i class="fa fa-user"></i> <span>User</span></a>
                                     </li>
-                          <li <?php if ($PAGE=="barang") { ?> class="active" <?php  } ?>>
-                                        <a href="?page=barang"><i class="fa fa-book"></i> <span>Data Barang</span></a>
-                                    </li>
+
+                                    <li class="submenu">
+                                    <?php if ($PAGE=="barang") { ?> class="active" <?php  } ?>
+                                        <a href="?page=barang"><i class="fa fa-book"></i> <span> Data Barang </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+								<li><a href="invoices.html">Stok Barang</a></li>
+								<li><a href="payments.html">Pengajuan</a></li>
+								
+							</ul>
+						</li>
                                       <li <?php if ($PAGE=="sekolah") { ?> class="active" <?php  } ?>>
                                         <a href="?page=sekolah"><i class="fa fa-hospital-o"></i> <span>Data Sekolah</span></a>
                                     </li>
