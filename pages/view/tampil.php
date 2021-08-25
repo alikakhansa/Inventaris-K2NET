@@ -13,8 +13,6 @@
                         <tr>
                         	<th>No</th>
                             <th>Tanggal</th>
-                            <th>Nama</th>
-                            <th>Alamat</th>
                             <th>Kategori</th>
                             <th>Jumlah Barang</th>
                             <th>Keterangan</th>
@@ -24,8 +22,8 @@
                         </thead>
                         <tbody>
                        <?php
-                     
-								$sql = mysqli_query($koneksi, "SELECT * FROM sekolah ORDER BY nama_sekolah DESC") or die(mysqli_error($koneksi));
+                     			$ID = $_GET['nama_sekolah'];
+								$sql = mysqli_query($koneksi, "SELECT * FROM sekolah WHERE sekolah.nama_sekolah='$ID'") or die(mysqli_error($koneksi));
 
 									if(mysqli_num_rows($sql) > 0){
 								
@@ -37,8 +35,6 @@
 										<tr>
 											<td>'.$no.'</td>
 											<td>'.$data['tanggal'].'</td>
-											<td>'.$data['nama_sekolah'].'</td>
-											<td>'.$data['alamat'].'</td>
 											<td>'.$data['kategori'].'</td>
 											<td>'.$data['jumlah_barang'].'</td>
 											<td>'.$data['keterangan'].'</td>
