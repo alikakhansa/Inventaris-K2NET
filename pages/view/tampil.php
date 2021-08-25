@@ -2,6 +2,7 @@
             <div class="content">
                 <div class="row">
             <div class="card-body table-responsive">
+<<<<<<< HEAD
 			
 <div class="card-body">   
             <ol class="breadcrumb">
@@ -13,6 +14,13 @@
 </li>
                 <h5 class="header-title" style="font-size: 20px;">VIEW SEKOLAH</h5>
 				<a href="?page=view&aksi=tambah"><button type="button" class="btn btn-info">Tambah</button></a>
+=======
+
+                <h5 class="header-title" style="font-size: 20px;">VIEW SEKOLAH<?php
+                     			$ID = $_GET['nama_sekolah'];
+								$sql = mysqli_query($koneksi, "SELECT * FROM sekolah WHERE sekolah.nama_sekolah='$ID'") or die(mysqli_error($koneksi));
+								echo " - $ID.</h5> "?>
+>>>>>>> 654d022b3ada11392b86b50dcb159d9ce32d9e46
                     <button type="button" class="btn btn-outline-primary btn-lg-10" style="text-align: left;"><a href="../laporan/kembali.php"  target="_blank"><i class="fa fa-print"></i>  LAPORAN </a></button>
 					
                 <div>
