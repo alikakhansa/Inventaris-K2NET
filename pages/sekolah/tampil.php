@@ -40,7 +40,7 @@
 											<td>
 										
 
-											<a href="index.php?page=view&aksi=view&no='.$data['no'].'" class="btn btn-success"><i class="fa fa-book"> View</a></i>
+											<a href="index.php?page=view&aksi=view&nama_sekolah='.$data['nama_sekolah'].'" class="btn btn-success"><i class="fa fa-book"> View</a></i>
 
 												<a href="index.php?page=sekolah&aksi=edit&nama_sekolah='.$data['nama_sekolah'].'" class="btn btn-warning"><i class="fa fa-edit"> Edit</a></i>
 
