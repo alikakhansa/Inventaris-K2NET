@@ -28,6 +28,10 @@ if (@$_POST['edit']){
 
       $kode_barang     = $_POST['kode_barang'];
       $nama_barang     = $_POST['nama_barang'];
+      $stok_awal     = $_POST['stok_awal'];
+      $stok_akhir     = $_POST['stok_akhir'];
+      $b_masuk     = $_POST['b_masuk'];
+      $b_keluar     = $_POST['b_keluar'];
       $ket             = $_POST['ket'];
       $qty             = $_POST['qty'];
 
@@ -43,6 +47,26 @@ if (@$_POST['edit']){
                <div class="form-group">
                   <label for="text">NAMA BARANG</label>
                   <input type="text" class="form-control" name="nama_barang" value="<?php echo $nama_barang; ?>" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="text">STOCK AWAL</label>
+                  <input type="text" class="form-control" name="nama_barang" value="<?php echo $stok_awal; ?>" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="text">STOCK AKHIR</label>
+                  <input type="text" class="form-control" name="nama_barang" value="<?php echo $stok_akhir; ?>" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="text">BARANG MASUK</label>
+                  <input type="text" class="form-control" name="nama_barang" value="<?php echo $b_masuk; ?>" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="text">BARANG KELUAR</label>
+                  <input type="text" class="form-control" name="nama_barang" value="<?php echo $b_keluar; ?>" required>
                 </div>
 
                <div class="form-group">
