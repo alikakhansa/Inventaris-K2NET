@@ -46,6 +46,7 @@ include("../inc/kode.php");
         <div class="header">
             <div class="header-left">
                 <a href="index.php" class="logo">
+                <img src="../assets/img/a.png" width="20" height="20" alt="">
                     <span>Inventaris</span>
                 </a>    
             </div>
@@ -60,7 +61,7 @@ include("../inc/kode.php");
                             <img class="rounded-circle" src="../assets/img/user.png" width="24">
                             <span class="status online"></span>
                         </span>
-                        <span>Siswa</span>
+                        <span>Admin</span>
                     </a>
                     <div class="dropdown-menu">
                        
@@ -79,20 +80,50 @@ include("../inc/kode.php");
                                     ?>                        
                                    
                        
-                         <li <?php if ($PAGE=="dashboard") { ?> class="active" <?php  } ?>>
-                                        <a href="?page=dashboardsiswa"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                                   <li <?php if ($PAGE=="dashboard") { ?> class="active" <?php  } ?>>
+                                        <a href="?page=dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                                     </li>
-                          <li <?php if ($PAGE=="barangsiswa") { ?> class="active" <?php  } ?>>
-                                        <a href="?page=barangsiswa"><i class="fa fa-book"></i> <span>Data Barang</span></a>
+                                    
+
+                                    <li class="submenu">
+							<a href="#"><i class="fa fa-book"></i> <span> Data Barang </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+
+								<li><?php if ($PAGE=="barang") { ?> <?php  } ?>
+                                        <a href="?page=barang">Stok Barang</a></li>
+								<li><a href="payments.html">Pengajuan</a></li>
+								
+							</ul>
+						</li>
+
+                        <li class="submenu">
+							<a href="#"><i class="fa fa-cog"></i> <span> Data Alat </span> <span class="menu-arrow"></span></a>
+							<ul style="display: none;">
+
+								<li><?php if ($PAGE=="barang") { ?> <?php  } ?>
+                                <?php if ($PAGE=="pinjam") { ?> <?php  } ?>
+                                        <a href="?page=pinjam">Peminjaman</a></li>
+								<li><li <?php if ($PAGE=="kembali") { ?> class="active" <?php  } ?>>
+                                        <a href="?page=kembali">Pengembalian</a>
+								
+							</ul>
+						</li>
+
+                        <li>
+                                        <a href="#"><i class="fa fa-calendar-check-o"></i> <span>Data Pekerjaan</span></a>
                                     </li>
-                                      <li <?php if ($PAGE=="sekolahsiswa") { ?> class="active" <?php  } ?>>
-                                        <a href="?page=sekolahsiswa"><i class="fa fa-hospital-o"></i> <span>Data Sekolah</span></a>
+
+
+                                      <li <?php if ($PAGE=="sekolah") { ?> class="active" <?php  } ?>>
+                                        <a href="?page=sekolah"><i class="fa fa-hospital-o"></i> <span>Data Sekolah</span></a>
                                     </li>
-                                     <li <?php if ($PAGE=="pinjamsiswa") { ?> class="active" <?php  } ?>>
-                                        <a href="?page=pinjamsiswa"><i class="fa fa-upload"></i> <span>Peminjaman</span></a>
+
+                                    <li <?php if ($PAGE=="informasi") { ?> class="active" <?php  } ?>>
+                                        <a href="?page=informasi"><i class="fa fa-laptop"></i> <span>Informasi</span></a>
                                     </li>
-                                      <li <?php if ($PAGE=="kembalisiswa") { ?> class="active" <?php  } ?>>
-                                        <a href="?page=kembalisiswa"><i class="fa fa-download"></i> <span>Pengembalian</span></a>
+
+                                    <li <?php if ($PAGE=="user") { ?> class="active" <?php  } ?>>
+                                        <a href="?page=user"><i class="fa fa-user"></i> <span>User</span></a>
                                     </li>
                                     
 

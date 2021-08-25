@@ -5,14 +5,24 @@
 
 
  ?> 
+   
+
  <div class="page-wrapper">
             <div class="content">
+            <div class="m-t-20">
+<div class="card-body">   
+            <ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index.php">Dashboard</a>
+</li>
+<li class="breadcrumb-item active">Tambah Sekolah
+</ol>
+</li>
 
-                <div class="m-t-20"> 
                     <label class="mb-0"><b><h4>Tambah Sekolah</h4></b></label>
                 <div class="row">
 
-    
+</div>
 </div>
 </div>
                 <!-- end page title end breadcrumb -->

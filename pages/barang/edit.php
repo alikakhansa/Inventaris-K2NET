@@ -1,6 +1,16 @@
 
    <div class="page-wrapper">
             <div class="content">
+
+            <ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index.php">Dashboard</a>
+</li>
+<li class="breadcrumb-item active">Edit Barang
+</ol>
+</li>
+
+
                 <div class="m-t-20">  <h4>Edit Barang</h4> </div>
                 <div class="row">
 
@@ -80,6 +90,6 @@ if (@$_POST['edit']){
                 </div>
 
               <div class="box-footer">
-                <button type="submit" name="edit" class="btn btn-primary" value="edit">Edit</button>
-                  <a href="../operator/index.php?page=barang" class="btn btn-warning">Back</a>
+                <button type="submit" name="edit" class="btn btn-primary" value="edit">Simpan</button>
+                  <a href="../operator/index.php?page=barang" class="btn btn-warning">Kembali</a>
               </div>

@@ -10,7 +10,7 @@
 </div>
 <br>
                 <h5 class="header-title" style="font-size: 20px;">STOK BARANG</h5>
-              <a href="?page=barang&aksi=tambah"><button type="button" class="btn btn-info">Tambah</button></a>
+              <a href="?page=barang&aksi=tambah"><button type="button" class="btn btn-info"><i class="fa fa-plus"> Tambah</button></a></i>
                <br><br>
                 <div>
                     <table id="dataTables-example" class="table border-0">

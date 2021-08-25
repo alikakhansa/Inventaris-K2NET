@@ -7,7 +7,13 @@
  ?> 
  <div class="page-wrapper">
             <div class="content">
-
+            <ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index.php">Dashboard</a>
+</li>
+<li class="breadcrumb-item active">Tambah Barang
+</ol>
+</li>
                 <div class="m-t-20"> 
                     <label class="mb-0"><b><h4>Tambah Barang</h4></b></label>
                 <div class="row">
@@ -62,8 +68,8 @@
                                 <br>
                                 <label class="col-sm-2 col-form-label">&nbsp;</label>
                 <div class="col-sm-10">
-                    <input type="submit" name="submit" class="btn btn-primary" value="SIMPAN">
-                    <a href="../operator/index.php?page=barang" class="btn btn-warning">Back</a>
+                    <input type="submit" name="submit" class="btn btn-primary" value="Simpan">
+                    <a href="../operator/index.php?page=barang" class="btn btn-warning">Kembali</a>
                 </div>
             
                         </div>

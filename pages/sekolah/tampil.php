@@ -2,9 +2,15 @@
             <div class="content">
                 <div class="row">
             <div class="card-body table-responsive">
-
+			<div class="page-title-right">
+   <ol class="breadcrumb m-0">
+      <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+      <li class="breadcrumb-item active">Daftar Sekolah</li>
+   </ol>
+</div>
+<br>
                 <h5 class="header-title" style="font-size: 20px;">DAFTAR SEKOLAH</h5>
-                    <a href="?page=sekolah&aksi=tambah"> <button type="button" class="btn btn-info">  Tambah</button></a></i>
+                    <a href="?page=sekolah&aksi=tambah"> <button type="button" class="btn btn-info"><i class="fa fa-plus">  Tambah</button></a></i>
             
                 <div>
                     <table id="dataTables-example" class="table border-0">

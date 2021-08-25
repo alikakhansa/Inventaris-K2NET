@@ -46,6 +46,7 @@ include("../inc/kode.php");
         <div class="header">
             <div class="header-left">
                 <a href="index.php" class="logo">
+                <img src="../assets/img/a.png" width="20" height="20" alt="">
                     <span>Inventaris</span>
                 </a>    
             </div>

@@ -18,10 +18,19 @@
 
    }
   ?>
+   <div class="col-lg-12">
+            <ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index.php">Dashboard</a>
+</li>
+<li class="breadcrumb-item active">Edit User
+</ol>
+</li>
+</div>
           <div class="col-lg-12">
    <div class="card">
       <div class="card-body">
-         <h4 class="card-title mb-4">UPDATE USER</h4>
+         <h4 class="card-title mb-4">EDIT USER</h4>
          <form method="post" name="Input" action="../pages/user/proses_edit.php">
          <div class="form-group row mb-4">
              
@@ -76,8 +85,9 @@
             <div class="form-group row justify-content-end">
                <div class="col-sm-9">
                   <div>
-                     <a href="index.php?page=user" class="btn btn-danger waves-effect waves-light" data-toogle="tooltip" data-placement="bottom" title="Kembali"><i class="bx bx-arrow-back font-size-18 align-middle mr-2"></i> BACK</a>
-                     <button type="submit" class="btn btn-primary waves-effect waves-light" title="simpan"><i class="bx bx-check font-size-18 align-middle mr-2"></i>SAVE</button>
+                  <button type="submit" class="btn btn-primary waves-effect waves-light" title="simpan">Simpan</button>
+                     <a href="index.php?page=user" class="btn btn-danger waves-effect waves-light" data-toogle="tooltip" data-placement="bottom" title="Kembali"> Kembali</a>
+                     
                     </div>
                </div>
             </div>

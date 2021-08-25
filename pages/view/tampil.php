@@ -2,16 +2,26 @@
             <div class="content">
                 <div class="row">
             <div class="card-body table-responsive">
-
+			
+<div class="card-body">   
+            <ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index.php">Dashboard</a>
+</li>
+<li class="breadcrumb-item active">View Sekolah
+</ol>
+</li>
                 <h5 class="header-title" style="font-size: 20px;">VIEW SEKOLAH</h5>
+				<a href="?page=view&aksi=tambah"><button type="button" class="btn btn-info">Tambah</button></a>
                     <button type="button" class="btn btn-outline-primary btn-lg-10" style="text-align: left;"><a href="../laporan/kembali.php"  target="_blank"><i class="fa fa-print"></i>  LAPORAN </a></button>
-            
+					
                 <div>
                     <table id="dataTables-example" class="table border-0">
                         <thead>
  							<br>
                         <tr>
                         	<th>No</th>
+							
                             <th>Tanggal</th>
                             <th>Kategori</th>
                             <th>Jumlah Barang</th>
@@ -21,20 +31,20 @@
 
                         </thead>
                         <tbody>
-                       <?php
-                     			$ID = $_GET['nama_sekolah'];
-								$sql = mysqli_query($koneksi, "SELECT * FROM sekolah WHERE sekolah.nama_sekolah='$ID'") or die(mysqli_error($koneksi));
-
-									if(mysqli_num_rows($sql) > 0){
-								
-									$no = 1;
-							
+                    
+                     			<?php
+								 include '../inc/koneksi.php';
+										  $sql = mysqli_query($koneksi, "SELECT * FROM sekolah GROUP BY nama_sekolah DESC") or die(mysqli_error($koneksi));
+		  
+											  if(mysqli_num_rows($sql) > 0){
+										  
+											  $no = 1;
 									while($data = mysqli_fetch_assoc($sql)){
 							
 										echo '
 										<tr>
 											<td>'.$no.'</td>
-										
+											
 											<td>'.$data['tanggal'].'</td>
 											<td>'.$data['kategori'].'</td>
 											<td>'.$data['jumlah_barang'].'</td>

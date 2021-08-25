@@ -1,5 +1,14 @@
 <div class="page-wrapper">
             <div class="content">
+
+            <ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index.php">Dashboard</a>
+</li>
+<li class="breadcrumb-item active">Edit View Sekolah
+</ol>
+</li>
+
                 <div class="m-t-20">  <h4>Edit View</h4> </div>
                 <div class="row">
 

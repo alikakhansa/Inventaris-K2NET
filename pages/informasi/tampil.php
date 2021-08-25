@@ -9,7 +9,8 @@ $informasi =@mysqli_fetch_array($query_informasi);
 <div id="content-wrapper">
 
       <div class="container-fluid">
-
+      
+            
         <ol class="breadcrumb">
 <li class="breadcrumb-item">
 <a href="index.php">Dashboard</a>
@@ -17,11 +18,14 @@ $informasi =@mysqli_fetch_array($query_informasi);
 <li class="breadcrumb-item active">Informasi
 </ol>
 </li>
+</div>
+
 
 <div class="row mt">
           <div class="col-lg-12">
              <div class="col-sm-offset-2 col-lg-12 col-md-12">
-           <h4>Data Informasi Inventaris K2NET</h4></div>
+            
+             <h5 class="header-title" style="font-size: 20px;">Data Informasi K2NET</div>
            <br>
            <?php
            if (@$_POST['edit_info']) {

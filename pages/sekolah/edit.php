@@ -1,5 +1,15 @@
   <div class="page-wrapper">
             <div class="content">
+         
+            <div class="m-t-20">
+<div class="card-body">   
+            <ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index.php">Dashboard</a>
+</li>
+<li class="breadcrumb-item active">Edit Sekolah
+</ol>
+</li>
                 <div class="m-t-20">  <h4>Edit Sekolah</h4> </div>
                 <div class="row">
 
@@ -44,7 +54,9 @@ if (@$_POST['edit']){
              
 
               <div class="box-footer">
-                <button type="submit" name="edit" class="btn btn-primary" value="edit">Edit</button>
+                <button type="submit" name="edit" class="btn btn-primary" value="edit">Simpan</button>
+              
+                     <a href="index.php?page=sekolah" class="btn btn-danger waves-effect waves-light" data-toogle="tooltip" data-placement="bottom" title="Kembali"> Kembali</a>
               </div>
 
 

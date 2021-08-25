@@ -2,9 +2,15 @@
             <div class="content">
                 <div class="row">
             <div class="card-body table-responsive">
-
+            <ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index.php">Dashboard</a>
+</li>
+<li class="breadcrumb-item active">Daftar User
+</ol>
+</li>
                 <h5 class="header-title" style="font-size: 20px;">DAFTAR USER</h5>
-              <a href="?page=user&aksi=tambah"><button type="button" class="btn btn-info">Tambah</button></a>
+              <a href="?page=user&aksi=tambah"><button type="button" class="btn btn-info"><i class="fa fa-plus"> Tambah</button></a></i>
                <br><br>
                 <div>
                     <table id="dataTables-example" class="table border-0">
