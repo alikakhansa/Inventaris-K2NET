@@ -37,6 +37,7 @@
 										echo '
 										<tr>
 											<td>'.$no.'</td>
+										
 											<td>'.$data['tanggal'].'</td>
 											<td>'.$data['kategori'].'</td>
 											<td>'.$data['jumlah_barang'].'</td>
@@ -49,7 +50,7 @@
 
 											
 
-												<a href="index.php?page=sekolah&aksi=edit&nama_sekolah='.$data['nama_sekolah'].'" class="btn btn-warning"><i class="fa fa-edit"> Edit</a></i>
+												<a href="index.php?page=view&aksi=edit&nama_sekolah='.$data['nama_sekolah'].'" class="btn btn-warning"><i class="fa fa-edit"> Edit</a></i>
 
 												<a href="../pages/sekolah/hapus.php?nama_sekolah='.$data['nama_sekolah'].'" class="btn btn-danger tom" onclick="return confirm(\'Yakin ingin menghapus data ini?\')"><i class="fa fa-trash"> Delete</a></i>
 											</td>
