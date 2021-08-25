@@ -64,7 +64,7 @@
                  <label class="mb-0"><b>Kategori</b></label>
                <div class="m-t-20">
                <select class="form-control select2" name="kategori" >
-                        <option>Silahkan Pilih Jenis User</option>
+                        <option value="#" disabled selected >Silahkan Pilih Jenis User</option>
                         <option value="setting jaringan">Setting Jaringan</option>
                         <option value="setting server">Setting Server</option>
                         <option value="penambahan barang">Penambahan Barang</option>
