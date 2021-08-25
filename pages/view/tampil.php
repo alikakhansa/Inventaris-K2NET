@@ -3,7 +3,10 @@
                 <div class="row">
             <div class="card-body table-responsive">
 
-                <h5 class="header-title" style="font-size: 20px;">VIEW SEKOLAH</h5>
+                <h5 class="header-title" style="font-size: 20px;">VIEW SEKOLAH<?php
+                     			$ID = $_GET['nama_sekolah'];
+								$sql = mysqli_query($koneksi, "SELECT * FROM sekolah WHERE sekolah.nama_sekolah='$ID'") or die(mysqli_error($koneksi));
+								echo " - $ID.</h5> "?>
                     <button type="button" class="btn btn-outline-primary btn-lg-10" style="text-align: left;"><a href="../laporan/kembali.php"  target="_blank"><i class="fa fa-print"></i>  LAPORAN </a></button>
             
                 <div>

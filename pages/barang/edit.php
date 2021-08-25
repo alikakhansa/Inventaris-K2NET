@@ -51,12 +51,12 @@ if (@$_POST['edit']){
 
                 <div class="form-group">
                   <label for="text">STOCK AWAL</label>
-                  <input type="text" class="form-control" name="nama_barang" value="<?php echo $stok_awal; ?>" required>
+                  <input type="text" class="form-control" name="nama_barang" value="<?php echo $stok_awal; ?>" required readonly>
                 </div>
 
                 <div class="form-group">
                   <label for="text">STOCK AKHIR</label>
-                  <input type="text" class="form-control" name="nama_barang" value="<?php echo $stok_akhir; ?>" required>
+                  <input type="text" class="form-control" name="nama_barang" value="<?php echo $stok_akhir; ?>" required readonly>
                 </div>
 
                 <div class="form-group">
