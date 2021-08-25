@@ -32,9 +32,10 @@ else
 	  ?>
 
 <?php
+$tes = @$_GET['nama_sekolah'];
 if
 	($UPDATE1){
-                      echo '<script>alert("Berhasil mengedit data."); document.location="index.php?page=view";</script>';
+                      echo '<script>alert("Berhasil mengedit data."); document.location="index.php?page=view&nama_sekolah='.$tes.'";</script>';
                 }else{
                     echo '<div class="alert alert-warning">Gagal melakukan proses tambah data.</div>';
                 }

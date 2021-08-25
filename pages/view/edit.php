@@ -63,7 +63,7 @@ if (@$_POST['edit']){
                  <label>Kategori</label>
                <div class="form-group">
                <select class="form-control select2" name="kategori" >
-                        <option>Silahkan Pilih Jenis Kategori</option>
+                        <option value='' disabled selected>Silahkan Pilih Jenis Kategori</option>
                         <option value="setting jaringan">Setting Jaringan</option>
                         <option value="setting server">Setting Server</option>
                         <option value="penambahan barang">Penambahan Barang</option>
