@@ -4,6 +4,9 @@ switch ($PAGE) {
 	case 'dashboard':
 		include '../pages/dashboard/dashboard.php';
 		break;
+		case 'informasi':
+			include "../pages/informasi/informasi.php";
+			break;
 	case 'user':
 		include '../pages/user/user.php';
 		break;

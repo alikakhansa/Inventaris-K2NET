@@ -82,9 +82,7 @@ include("../inc/kode.php");
                          <li <?php if ($PAGE=="dashboard") { ?> class="active" <?php  } ?>>
                                         <a href="?page=dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                                     </li>
-                                    <li <?php if ($PAGE=="user") { ?> class="active" <?php  } ?>>
-                                        <a href="?page=user"><i class="fa fa-user"></i> <span>User</span></a>
-                                    </li>
+                                    
 
                                     <li class="submenu">
 							<a href="#"><i class="fa fa-book"></i> <span> Data Barang </span> <span class="menu-arrow"></span></a>
@@ -117,6 +115,14 @@ include("../inc/kode.php");
 
                                       <li <?php if ($PAGE=="sekolah") { ?> class="active" <?php  } ?>>
                                         <a href="?page=sekolah"><i class="fa fa-hospital-o"></i> <span>Data Sekolah</span></a>
+                                    </li>
+
+                                    <li <?php if ($PAGE=="informasi") { ?> class="active" <?php  } ?>>
+                                        <a href="?page=informasi"><i class="fa fa-laptop"></i> <span>Informasi</span></a>
+                                    </li>
+
+                                    <li <?php if ($PAGE=="user") { ?> class="active" <?php  } ?>>
+                                        <a href="?page=user"><i class="fa fa-user"></i> <span>User</span></a>
                                     </li>
                                    
                                  
