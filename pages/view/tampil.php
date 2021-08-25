@@ -27,7 +27,7 @@
                         $sql = mysqli_query($koneksi, "SELECT * FROM sekolah where sekolah.nama_sekolah='$tes'") or die(mysqli_error($koneksi));
 									if(mysqli_num_rows($sql) >= 0){
 								
-									$no = 0;
+									$no = 1;
 							
 									while($data = mysqli_fetch_assoc($sql)){
 							
