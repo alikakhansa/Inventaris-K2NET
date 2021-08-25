@@ -5,7 +5,7 @@
 
                 <h5 class="header-title" style="font-size: 20px;">VIEW SEKOLAH</h5>
                     <button type="button" class="btn btn-outline-primary btn-lg-10" style="text-align: left;"><a href="../laporan/kembali.php"  target="_blank"><i class="fa fa-print"></i>  LAPORAN </a></button>
-            
+					<a href="?page=view&aksi=tambah"><button type="button" class="btn btn-info"><i class="fa fa-plus"> Tambah</button></a></i>
                 <div>
                     <table id="dataTables-example" class="table border-0">
                         <thead>
