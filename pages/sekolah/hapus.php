@@ -3,7 +3,7 @@
 ob_start();
 include '../../inc/koneksi.php';
 
-$del = mysqli_query($koneksi,"DELETE FROM sekolah WHERE nama_sekolah = '$_GET[nama_sekolah]'")
+$del = mysqli_query($koneksi,"DELETE FROM sekolah WHERE id_sekolah = '$_GET[id_sekolah]'")
 
 or die(mysqli_error($koneksi));
 

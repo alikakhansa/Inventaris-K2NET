@@ -1,37 +1,47 @@
 <?php
 ob_start();
-include ("../../inc/koneksi.php");
-      
-      $KODE      = $_POST['tanggal'];
-      $NAMA      = $_POST['kategori'];
-	  $SA      = $_POST['jumlah_barang'];
-      $ST      = $_POST['keterangan'];
-	 
+include '../../inc/koneksi.php';
 
-if ($KODE=="" || $NAMA=="" || $SA=="" || $ST =="") 
-{
-?>
+$IDS            =$_POST['id_sekolah'];
+$TGL            =$_POST['tanggal'];
+$KAT          	=$_POST['kategori'];
+$JML         	=$_POST['jumlah_barang'];
+$KET          	=$_POST['keterangan'];
 
-<?php
+
+
+if ($IDS		=="" || 
+	$TGL		=="" || 
+	$KAT		=="" || 
+	$JML		=="" || 
+	$KET		=="") {
+
+
+	echo"<script>
+
+		alert('GAGAL');
+	
+		</script>";
+
+	}else{
 	
 
-}
-else{
-		$QUERY1=mysqli_query($koneksi, "INSERT INTO sekolah SET
-		tanggal      ='$KODE',
-		kategori      ='$NAMA',
-		jumlah_barang     ='$SA',
-		keterangan              ='$ST' ;")
-		
+		$QUERY2=mysqli_query($koneksi,"INSERT INTO view SET
+			id_sekolah         	='$IDS',
+			tanggal         	='$TGL',
+			kategori          	='$KAT',
+			jumlah_barang       ='$JML',
+			keterangan          ='$KET';")
+		or die("Gagal memasukan data baru".mysqli_error($koneksi) );
 
+		}
 
-		or die('Gagal Memasukan Data Baru'.mysqli_error($koneksi) );
+	echo"<script>
 
-		header('location:../../operator/index.php?page=view');
-	}
+		alert('BERHASIL');
+	
+		</script>";
+
+header('location:../../operator/index.php?page=view');
+
 		?>
-
-
-		
-
-

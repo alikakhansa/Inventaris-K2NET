@@ -3,7 +3,7 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$database = "inventaris_k2net";
+$database = "cbain";
 
 $koneksi = mysqli_connect($server,$username,$password,$database);
 // Check koneksi

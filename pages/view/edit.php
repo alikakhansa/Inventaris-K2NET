@@ -17,32 +17,37 @@ if (@$_POST['edit']){
   include "proses_edit.php";
 }
 ?>
-<form  action="" role="form" method="POST" >
-    <?php 
-  $ID = $_GET['nama_sekolah'];
-  $EDIT ="SELECT * FROM sekolah WHERE sekolah.nama_sekolah='$ID' ";
-  $HASILEDIT=@mysqli_query($koneksi,$EDIT);
-  while ($ROW=@mysqli_fetch_array($HASILEDIT)) {
+
+ <?php 
+ $ID =@$_GET['id_sekolah'];
+
+  $EDIT ="SELECT sekolah.*, view.* FROM sekolah INNER JOIN view on view.id_sekolah=sekolah.id_sekolah
+  WHERE tb_pegawai.id_sekolah='$ID' " or die("GAGAL".mysqli_error());
+$HASILEDIT        =  @mysqli_query($koneksi, $EDIT);
+while ($ROW       =  @mysqli_fetch_array($HASILEDIT)) {
    
-      $NIS       = $ROW['nama_sekolah'];
-      $NAMA      = $ROW['alamat'];
-      $TGL       = $ROW['tanggal'];
-      $KAT      = $ROW['kategori'];
-      $JML       = $ROW['jumlah_barang'];
-      $KETERANGAN      = $ROW['keterangan'];
+      $IDS          = $ROW['id_sekolah'];
+      $IDN          = $ROW['id_view'];
+      $TGL          = $ROW['tanggal'];
+      $KAT          = $ROW['kategori'];
+      $JML          = $ROW['jumlah_barang'];
+      $KETERANGAN   = $ROW['keterangan'];
 
 
   }
   ?>
+  
+<form  action="" role="form" method="POST" >
+   
             
                 <div class="form-group">
-                  <label>Nama Sekolah </label>
-                  <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah" value="<?php echo $NIS; ?>" required readonly>
+                 
+                  <input type="hidden" class="form-control" id="id_sekolah" name="id_sekolah" value="<?php echo $IDS; ?>" required readonly>
                 </div>
 
-               <div class="form-group">
-                  <label for="text">Alamat</label>
-                  <input type="text" class="form-control" name="alamat" value="<?php echo $NAMA; ?>" required readonly>
+                 <div class="form-group">
+                
+                  <input type="hidden" class="form-control" id="id_view" name="id_view" value="<?php echo $IDN; ?>" required readonly>
                 </div>
 
                 <div class="form-group">

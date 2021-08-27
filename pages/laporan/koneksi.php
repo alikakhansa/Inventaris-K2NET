@@ -2,7 +2,7 @@
 $SERVER="localhost";
 $USER="root";
 $PASSWORD="";
-$DATABASE="inventaris_k2net";
+$DATABASE="cbain";
 $koneksi = mysqli_connect($SERVER,$USER,$PASSWORD,$DATABASE);
 
 if(mysqli_connect_error()){

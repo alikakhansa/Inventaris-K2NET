@@ -1,63 +1,54 @@
-  <div class="page-wrapper">
-            <div class="content">
-         
-            <div class="m-t-20">
-<div class="card-body">   
-            <ol class="breadcrumb">
-<li class="breadcrumb-item">
-<a href="index.php">Dashboard</a>
-</li>
-<li class="breadcrumb-item active">Edit Sekolah
+<div class="page-wrapper">
+<div class="content">
+<ol class="breadcrumb">
+   <li class="breadcrumb-item">
+      <a href="index.php">Dashboard</a>
+   </li>
+   <li class="breadcrumb-item active">Edit Barang
 </ol>
 </li>
-                <div class="m-t-20">  <h4>Edit Sekolah</h4> </div>
-                <div class="row">
-
-        <div class="page-title-box">
-             
-                    <div class="card m-b-30">
-            
-           
-        </div>
-    </div>
+<div class="m-t-20">
+   <h4>Edit Barang</h4>
 </div>
-                   
+<div class="row">
+   <div class="page-title-box">
+      <div class="card m-b-30">
+      </div>
+   </div>
+</div>
 <?php
-if (@$_POST['edit']){ 
-  include "proses_edit.php";
-}
-?>
+   if (@$_POST['edit']){ 
+     include "proses_edit.php";
+   }
+   ?>
 <form  action="" role="form" method="POST" >
-    <?php 
-  $ID = $_GET['nama_sekolah'];
-  $EDIT ="SELECT * FROM sekolah WHERE sekolah.nama_sekolah='$ID' ";
-  $HASILEDIT=@mysqli_query($koneksi,$EDIT);
-  while ($ROW=@mysqli_fetch_array($HASILEDIT)) {
+<?php 
+   $ID = $_GET['id_sekolah'];
+   $EDIT ="SELECT * FROM sekolah WHERE sekolah.id_sekolah='$ID' ";
+   $HASILEDIT=@mysqli_query($koneksi,$EDIT);
+   while ($_POST=@mysqli_fetch_array($HASILEDIT)) {
+    
    
-      $NIS       = $ROW['nama_sekolah'];
-      $NAMA      = $ROW['alamat'];
-
-
-  }
-  ?>
-            
-                <div class="form-group">
-                  <label>Nama Sekolah </label>
-                  <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah" value="<?php echo $NIS; ?>" required readonly>
-                </div>
-
-               <div class="form-group">
-                  <label for="text">Alamat</label>
-                  <input type="text" class="form-control" name="alamat" value="<?php echo $NAMA; ?>" required>
-                </div>
-
-             
-
-              <div class="box-footer">
-                <button type="submit" name="edit" class="btn btn-primary" value="edit">Simpan</button>
-              
-                     <a href="index.php?page=sekolah" class="btn btn-danger waves-effect waves-light" data-toogle="tooltip" data-placement="bottom" title="Kembali"> Kembali</a>
-              </div>
-
-
-</form>
+       $kode_barang     = $_POST['id_sekolah'];
+       $nama_barang     = $_POST['nama_sekolah'];
+       $alamat       = $_POST['alamat'];
+      
+   
+   }
+   ?>
+<div class="form-group">
+   <label>ID</label>
+   <input type="text" class="form-control" id="id_sekolah" name="id_sekolah" value="<?php echo $kode_barang; ?>" required readonly>
+</div>
+<div class="form-group">
+   <label for="text">NAMA SEKOLAH</label>
+   <input type="text" class="form-control" name="nama_sekolah" value="<?php echo $nama_barang; ?>">
+</div>
+<div class="form-group">
+   <label for="text">ALAMAT</label>
+   <input type="text" class="form-control" name="alamat" value="<?php echo $alamat; ?>" required >
+</div>
+<div class="box-footer">
+   <button type="submit" name="edit" class="btn btn-primary" value="edit">Simpan</button>
+   <a href="../operator/index.php?page=sekolah" class="btn btn-warning">Kembali</a>
+</div>
