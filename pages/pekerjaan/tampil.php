@@ -24,7 +24,7 @@
             <br>
          
           <a href="?page=pekerjaan&aksi=tambah"><button type="button" class="btn btn-info"><i class="fa fa-plus"> Tambah</button></a></i>
-          <a href="../../pages/laporan/laporanpekerjaan.php?kode_pekerjaan='.$data['kode_pekerjaan'].'"><button type="button" class="btn btn-warning"><i class="fa fa-print"> Laporan</button></a></i>
+         
          </span>
         </div>
           <div class="card-body">
