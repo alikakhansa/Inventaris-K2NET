@@ -67,9 +67,9 @@
                                 <input type="text" class="form-control" name="qty" id="" required />
                                 <br>
                                 <label class="col-sm-2 col-form-label">&nbsp;</label>
-                <div class="col-sm-10">
+                <div class="mb-0">
                     <input type="submit" name="submit" class="btn btn-primary" value="Simpan">
-                    <a href="../operator/index.php?page=barang" class="btn btn-warning">Kembali</a>
+                    <a href="../operator/index.php?page=barang" class="btn btn-danger">Kembali</a>
                 </div>
             
                         </div>

@@ -91,5 +91,5 @@ if (@$_POST['edit']){
 
               <div class="box-footer">
                 <button type="submit" name="edit" class="btn btn-primary" value="edit">Simpan</button>
-                  <a href="../operator/index.php?page=barang" class="btn btn-warning">Kembali</a>
+                  <a href="../operator/index.php?page=barang" class="btn btn-danger">Kembali</a>
               </div>

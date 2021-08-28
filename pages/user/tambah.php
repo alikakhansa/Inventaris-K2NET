@@ -22,9 +22,9 @@
             <h4 class="card-title mb-4">Tambah User</h4>
             <form  action="../pages/user/proses_tambah.php" role="form" method="POST" >
                <div class="form-group row mb-4">
-                  <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">ID</label>
+                
                   <div class="col-sm-9">
-                     <input type="text" class="form-control" id="horizontal-firstname-input" name="id_login"value=" <?php echo autonumber("login", "id_login", 2, ""); ?>" required readonly>
+                     <input type="hidden" class="form-control" id="horizontal-firstname-input" name="id_login"value=" <?php echo autonumber("login", "id_login", 2, ""); ?>" required readonly>
                   </div>
                </div>
                <div class="form-group row mb-4">
@@ -60,13 +60,14 @@
                      </select>
                   </div>
                </div>
-         </div>
-         <div class="form-group row mb-4">
+               <div class="form-group row mb-4">
          <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Nama Pengguna</label>
          <div class="col-sm-9">
-         <input type="text" class="form-control" id="horizontal-firstname-input" name="nama">
+                     <input type="text" class="form-control" id="horizontal-firstname-input" name="nama">
+                  </div>
          </div>
-         </div>
+        
+        
          <div class="form-group row justify-content-end">
          <div class="col-sm-9">
          <div>

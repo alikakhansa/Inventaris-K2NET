@@ -1,12 +1,12 @@
 <?php
 include '../../inc/koneksi.php';
 
-$satu     = mysqli_real_escape_string($CONNECT, $_POST['kode_pekerjaan']);
-$dua      = mysqli_real_escape_string($CONNECT, $_POST['nama_sekolah']);
-$tiga     = mysqli_real_escape_string($CONNECT, $_POST['nama_pekerjaan']);
-$empat     = mysqli_real_escape_string($CONNECT, $_POST['team']);
-$lima      = mysqli_real_escape_string($CONNECT, $_POST['tanggal']);
-$enam    = mysqli_real_escape_string($CONNECT, $_POST['keterangan']);
+$satu     = mysqli_real_escape_string($koneksi, $_POST['kode_pekerjaan']);
+$dua      = mysqli_real_escape_string($koneksi, $_POST['nama_sekolah']);
+$tiga     = mysqli_real_escape_string($koneksi, $_POST['nama_pekerjaan']);
+$empat     = mysqli_real_escape_string($koneksi, $_POST['team']);
+$lima      = mysqli_real_escape_string($koneksi, $_POST['tanggal']);
+$enam    = mysqli_real_escape_string($koneksi, $_POST['keterangan']);
 
 
 

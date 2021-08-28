@@ -9,13 +9,13 @@
       <li class="breadcrumb-item">
          <a href="index.php">Dashboard</a>
       </li>
-      <li class="breadcrumb-item active">Tambah View Sekolah
+      <li class="breadcrumb-item active">Tambah Pekerjaan
    </ol>
    </li>
    <div class="m-t-20">
       <label class="mb-0">
          <b>
-            <h4>Tambah View</h4>
+            <h4>Tambah Pekerjaan</h4>
          </b>
       </label>
       <div class="row">
@@ -71,9 +71,10 @@
          <textarea type="text" class="form-control" name="keterangan" id="" required/></textarea>
          <br>
          <label class="col-sm-2 col-form-label">&nbsp;</label>
-         <div class="col-sm-10">
+
+         <div class="mb-0">
             <input type="submit" name="submit" class="btn btn-primary" value="Simpan">
-            <a href="../operator/index.php?page=barang" class="btn btn-warning">Back</a>
+            <a href="../operator/index.php?page=pekerjaan" class="btn btn-danger">Kembali</a>
          </div>
       </div>
 </div>

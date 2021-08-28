@@ -1,7 +1,12 @@
+<div class="page-wrapper">
+            <div class="content">
+                <div class="row">
+            <div class="card-body table-responsive">
+            
 <?php 
   $ID = $_GET['id'];
   $EDIT ="SELECT * FROM daftar_pekerjaan WHERE daftar_pekerjaan.kode_pekerjaan='$ID' ";
-  $HASILEDIT=mysqli_query($CONNECT,$EDIT);
+  $HASILEDIT=mysqli_query($koneksi,$EDIT);
   while ($ROW=mysqli_fetch_array($HASILEDIT)) {
    
      $KODE      = $ROW['kode_pekerjaan'];
@@ -25,7 +30,7 @@
       <li class="breadcrumb-item active">Edit Data Pekerjaan</li>
    </ol>
 </div>
-
+<br>
  <div class="box box-primary">
 
             <div class="box-header with-border">
@@ -41,8 +46,7 @@ if (@$_POST['edit']){
   ?>
             
                 <div class="form-group">
-                  <label>Kode Pekerjaan </label>
-                  <input type="text" class="form-control" id="kode_pekerjaan" name="kode_pekerjaan" value="<?php echo $KODE; ?>" placeholder="" required readonly>
+                  <input type="hidden" class="form-control" id="kode_pekerjaan" name="kode_pekerjaan" value="<?php echo $KODE; ?>" placeholder="" required readonly>
                 </div>
 
           
@@ -50,7 +54,7 @@ if (@$_POST['edit']){
             
                 <div class="form-group">
                 <label>Nama Sekolah</label>
-                <select class="form-control select2" style="width: 100%;" name="nama_sekolah">
+                <select class="form-control select2" style="width: 100%;" name="nama_sekolah" value="<?php echo $TGL; ?>>
                   <option selected="selected">Please Select Nama Sekolah</option>
                 <?php
                   $query = mysqli_query($koneksi,"SELECT * FROM sekolah group by nama_sekolah");
@@ -65,18 +69,13 @@ if (@$_POST['edit']){
                  </select>
               </div>
 
- <div class="form-group">
-                  <label>Nama Pekerjaan </label>
-                  <input type="text" class="form-control" id="nama_pekerjaan" name="nama_pekerjaan" value="<?php echo $ALAMAT; ?>" placeholder="" required>
+              <div class="form-group">
+                  <label for="text">Nama Pekerjaan </label>
+                  <input type="text" class="form-control" name="nama_pekerjaan" value="<?php echo $ALAMAT; ?>" required>
                 </div>
-
-
-                <label class="mb-0"><b>Nama Pekerjaan</b></label>
-         <input type="text" class="form-control" name="nama_pekerjaan" id="" required/>
-         <br>
          <div class="form-group">
             <label><b> Team </label></b>
-            <select class="select2 form-control mb-1 custom-select" style="width: 100%; height:36px;" name="team" id="team">
+            <select class="select2 form-control mb-1 custom-select" style="width: 100%; height:36px;" name="team" id="team" value="<?php echo $TELP; ?>>
                <option value="" class="form-control">Please Select Team</option>
                <?php
                   $query = mysqli_query($koneksi,"SELECT * FROM login group by team");
@@ -108,6 +107,7 @@ if (@$_POST['edit']){
               
               <div class="box-footer">
                 <button type="submit" name="edit" class="btn btn-primary" value="edit">Edit</button>
+                <a href="../operator/index.php?page=pekerjaan" class="btn btn-danger">Kembali</a>
               </div>
 
 

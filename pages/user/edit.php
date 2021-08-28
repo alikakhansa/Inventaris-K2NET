@@ -29,7 +29,7 @@
 <div class="col-lg-12">
    <div class="card">
       <div class="card-body">
-         <h4 class="card-title mb-4">EDIT USER</h4>
+         <h4 class="card-title mb-4">Edit User</h4>
          <form method="post" name="Input" action="../pages/user/proses_edit.php">
             <div class="form-group row mb-4">
                <div class="col-sm-9">
@@ -51,7 +51,7 @@
             <div class="form-group row mb-4">
                <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">TIPE USER</label>
                <div class="col-sm-9">
-                  <select class="form-control select2" name="level" >
+                  <select class="form-control select2" name="level" value="<?php echo $LEVEL; ?>>
                      <option>Silahkan Pilih Jenis User</option>
                      <option value="admin">Admin</option>
                      <option value="operator">Operator</option>
@@ -61,7 +61,7 @@
             <div class="form-group row mb-4">
                <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Team</label>
                <div class="col-sm-9">
-                  <select class="form-control select2" name="team" >
+                  <select class="form-control select2" name="team" value="<?php echo $TEAM; ?>>
                      <option>Silahkan Pilih Jenis Team</option>
                      <option value="team 1">Team 1</option>
                      <option value="team 2">Team 2</option>

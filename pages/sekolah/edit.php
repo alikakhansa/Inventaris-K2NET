@@ -4,11 +4,11 @@
    <li class="breadcrumb-item">
       <a href="index.php">Dashboard</a>
    </li>
-   <li class="breadcrumb-item active">Edit Barang
+   <li class="breadcrumb-item active">Edit Sekolah
 </ol>
 </li>
 <div class="m-t-20">
-   <h4>Edit Barang</h4>
+   <h4>Edit Sekolah</h4>
 </div>
 <div class="row">
    <div class="page-title-box">
