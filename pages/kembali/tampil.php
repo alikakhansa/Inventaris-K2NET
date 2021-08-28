@@ -2,30 +2,35 @@
             <div class="content">
                 <div class="row">
             <div class="card-body table-responsive">
-                <h5 class="header-title" style="font-size: 20px;">PENGEMBALIAN</h5>
+            <div class="page-title-right">
+   <ol class="breadcrumb m-0">
+      <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+      <li class="breadcrumb-item active">Pengembalian Barang</li>
+   </ol>
+</div>
+<br>
+                 <h5 class="header-title" style="font-size: 20px;">PENGEMBALIAN BARANG</h5>
+                 <br>
                         <?php 
                         @$PAGE =$_GET['page'];
                         ?>
-            <div align="right">
-                
-                <button type="button" class="btn btn-outline-primary btn-lg-10" style="text-align: left;"><a href="?page=kembali&aksi=tambah"> KEMBALIKAN BARANG </a></button>
-                 <button type="button" class="btn btn-outline-primary btn-lg-10" style="text-align: left;"><a href="../laporan/kembali.php"  target="_blank"><i class="fa fa-print"></i>  LAPORAN </a></button>
-            </div>
+           <div>       
+                 <a href="?page=kembali&aksi=tambah"><button type="button" class="btn btn-info"><i class="fa fa-plus"> Pengembalian Barang</button></a></i>
+              
+                 </div>
+                 <br>   
                     <br>
                 <div>
                     <table id="dataTables-example" class="table border-0">
 <thead>
                         <tr>
                             <th>No</th>
-                            <th>id kembali</th>
-                            <th>Id Inventaris</th>
-                            <th>Nama</th>
-                            <th>Nama Barang</th>
-                            <th>QTY Pinjam</th>
-                            <th>Tgl Pinjam</th>
-                            <th>Tgl Kembali</th>
-                            <th class="badge-warning">DENDA</th>
-                            <th>STATUS</th>
+                            <th>id Pengembalian</th>
+                            <th>Id Peminjaman</th>
+                            <th>Nama Sekolah</th>
+                            <th>Kode Alat</th>
+                            <th>Tanggal Kembali</th>
+                            <th>status</th>
 
                         </tr>
 
@@ -34,30 +39,24 @@
                             <?php
                             include '../inc/koneksi.php';
 
-                               $query= @mysqli_query($koneksi, "SELECT  inventaris.*, master_siswa.*, daftar_barang.*, kembali.* FROM kembali
-                                INNER JOIN inventaris on inventaris.id_inventaris = kembali.id_inventaris 
-                                INNER JOIN master_siswa on master_siswa.NIS = kembali.NIS
-                                INNER JOIN daftar_barang on daftar_barang.kode_barang = kembali.kode_barang")
-                               or die(mysqli_error($koneksi));
+                               $query= @mysqli_query($koneksi, "SELECT * FROM daftar_pengembalian ORDER BY id_pengembalian DESC") or die(mysqli_error($koneksi));
 
                               
 
                               $no=1;
                               while ($data = @mysqli_fetch_array($query)) {
-                                $STATUS  = $data['STATUS'];
+                                $STATUS  = $data['status'];
                              
                                
                             ?>
                                         <tr>
                                             <td><?php  echo $no; ?></td>
                                             <td><?php  echo $data['id_pengembalian'];  ?></td>
-                                            <td><?php  echo $data['id_inventaris'];  ?></td>
-                                            <td><?php  echo $data['nama']; ?></td>
-                                            <td><?php  echo $data['nama_barang']; ?></td>
-                                            <td><?php  echo $data['qty_pinjam']; ?></td>
-                                            <td><?php  echo $data['tanggal_pinjam']; ?></td>
+                                            <td><?php  echo $data['id_peminjaman'];  ?></td>
+                                            <td><?php  echo $data['nama_sekolah']; ?></td>
+                                            <td><?php  echo $data['kode_alat']; ?></td>
                                             <td><?php  echo $data['tanggal_kembali']; ?></td>
-                                            <td><?php   echo $data['denda']; ?></td>
+                                        
                                             <td> 
                                                 <span class="#" data-toggle="tooltip" data-placement="bottom">
                                                 <?php if($STATUS==1){ 

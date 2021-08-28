@@ -2,28 +2,39 @@
             <div class="content">
                 <div class="row">
             <div class="card-body table-responsive">
-                 <h5 class="header-title" style="font-size: 20px;">PEMINJAMAN</h5>
+            <div class="page-title-right">
+   <ol class="breadcrumb m-0">
+      <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+      <li class="breadcrumb-item active">Peminjaman Barang</li>
+   </ol>
+</div>
+<br>
+                 <h5 class="header-title" style="font-size: 20px;">PEMINJAMAN BARANG</h5>
+                 <br>
                         <?php 
                         @$PAGE =$_GET['page'];
                         ?>
-                 <div align="right">       
-                <button type="button" class="btn btn-outline-primary btn-lg-10" style="text-align: left;"><a href="?page=pinjam&aksi=tambah">PINJAM BARANG </a></button>
-                 <button type="button" class="btn btn-outline-primary btn-lg-10" style="text-align: left;"><a href="../laporan/pinjam.php"  target="_blank"><i class="fa fa-print"></i>  LAPORAN </a></button>
-                 </div>   
+                 <div>       
+                 <a href="?page=pinjam&aksi=tambah"><button type="button" class="btn btn-info"><i class="fa fa-plus"> Pinjam Barang</button></a></i>
+              
+                 </div>
+                 <br>   
                 <div>
                     <table id="dataTables-example" class="table border-0">
 <thead>
                         <tr>
                             <th>No</th>
-                            <th>Id Inventaris</th>
-                            <th>NIS</th>
-                            <th>Nama</th>
-                            <th>Kode Barang</th>
-                            <th>QTY Pinjam</th>
-                            <th>Tgl Pinjam</th>
-                            <th>Tgl Kembali</th>
-                            <th>Nama Barang</th>
-                            <th>STATUS</th>
+                            <th>Id Peminjaman</th>
+                            <th>Kode Alat</th>
+                            <th>Nama Alat</th>
+                            <th>Nama Sekolah</th>
+                            <th>Stok Awal</th>
+                            <th>Stok Akhir</th>
+                            <th>Alat Masuk</th>
+                            <th>Alat Keluar</th>
+                            <th>Tanggal</th>
+                            <th>Keterangan</th>
+                         
                         </tr>
 
                         </thead>
@@ -31,39 +42,28 @@
                             <?php
                             include '../inc/koneksi.php';
 
-                               $query= @mysqli_query($koneksi, "SELECT master_siswa.*, daftar_barang.*, inventaris.* FROM inventaris
-                               INNER JOIN master_siswa on master_siswa.NIS = inventaris.NIS
-                               INNER JOIN daftar_barang on daftar_barang.kode_barang = inventaris.kode_barang")
-                               or die(mysqli_error($koneksi));
-
+                               $query= @mysqli_query($koneksi, "SELECT * FROM daftar_peminjaman ORDER BY id_peminjaman DESC") or die(mysqli_error($koneksi));
                               
 
                               $no=1;
                               while ($data = @mysqli_fetch_array($query)) {
-                                $STATUS  = $data['STATUS'];
+                                
                              
                                
                             ?>
                                         <tr>
                                             <td><?php  echo $no; ?></td>
-                                            <td><?php  echo $data['id_inventaris'];  ?></td>
-                                            <td><?php  echo $data['NIS']; ?></td>
-                                            <td><?php  echo $data['nama']; ?></td>
-                                            <td><?php  echo $data['kode_barang'] ; ?></td>
-                                            <td><?php  echo $data['qty_pinjam']; ?></td>
-                                            <td><?php  echo $data['tanggal_pinjam']; ?></td>
-                                            <td><?php  echo $data['tanggal_kembali']; ?></td>
-                                            <td><?php  echo $data['nama_barang']; ?></td>
-                                            <td> 
-                                                <span class="#" data-toggle="tooltip" data-placement="bottom">
-                                                <?php if($STATUS==1){ 
-                                                    echo "<span class='badge badge-pill badge-success'>Sudah Kembali</span>";
-                                                }elseif($STATUS==0){
-                                                    echo "<span class='badge badge-pill badge-danger'>Belum Kembali</span>";
-                                                }
-                                                 ?>
-                                                </span> 
-                                            </td>
+                                            <td><?php  echo $data['id_peminjaman'];  ?></td>
+                                            <td><?php  echo $data['kode_alat']; ?></td>
+                                            <td><?php  echo $data['nama_alat']; ?></td>
+                                            <td><?php  echo $data['nama_sekolah']; ?></td>
+                                            <td><?php  echo $data['stok_awal'] ; ?></td>
+                                            <td><?php  echo $data['stok_akhir']; ?></td>
+                                            <td><?php  echo $data['alat_masuk']; ?></td>
+                                            <td><?php  echo $data['alat_keluar']; ?></td>
+                                            <td><?php  echo $data['tanggal']; ?></td>
+                                            <td><?php  echo $data['keterangan']; ?></td>
+                                           
                                         </tr>
                                                                 <?php  
     $no++;

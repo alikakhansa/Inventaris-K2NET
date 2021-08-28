@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2021 at 08:46 AM
+-- Generation Time: Aug 28, 2021 at 10:23 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -19,23 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `cbain`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `daftar_alat`
---
-
-CREATE TABLE `daftar_alat` (
-  `kode_alat` int(10) NOT NULL,
-  `nama_alat` varchar(225) NOT NULL,
-  `stok_awal` varchar(225) NOT NULL,
-  `stok_akhir` varchar(255) NOT NULL,
-  `alat_masuk` varchar(255) NOT NULL,
-  `alat_keluar` varchar(255) NOT NULL,
-  `tanggal` date NOT NULL,
-  `keterangan` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -81,8 +64,34 @@ CREATE TABLE `daftar_pekerjaan` (
 --
 
 INSERT INTO `daftar_pekerjaan` (`kode_pekerjaan`, `nama_sekolah`, `nama_pekerjaan`, `team`, `tanggal`, `keterangan`) VALUES
-(1, 'SMK MVP ARS INT', 'Apa Aja Deh', 'team 1', '2021-08-27', 'A'),
-(2, 'SMPN 4 Bandung', 'Apa Aja Deh', 'team 1', '2021-08-27', 'B');
+(2, 'SMK MVP ARS INT', 'Test', 'team 1', '2021-08-27', 'B');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `daftar_peminjaman`
+--
+
+CREATE TABLE `daftar_peminjaman` (
+  `id_peminjaman` varchar(100) NOT NULL,
+  `kode_alat` varchar(100) NOT NULL,
+  `nama_alat` varchar(225) NOT NULL,
+  `nama_sekolah` varchar(100) NOT NULL,
+  `stok_awal` varchar(225) NOT NULL,
+  `stok_akhir` varchar(255) NOT NULL,
+  `alat_masuk` varchar(255) NOT NULL,
+  `alat_keluar` varchar(255) NOT NULL,
+  `tanggal` date NOT NULL,
+  `keterangan` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `daftar_peminjaman`
+--
+
+INSERT INTO `daftar_peminjaman` (`id_peminjaman`, `kode_alat`, `nama_alat`, `nama_sekolah`, `stok_awal`, `stok_akhir`, `alat_masuk`, `alat_keluar`, `tanggal`, `keterangan`) VALUES
+(' 0000000001', ' 0000000001', 'Test', 'SMK MVP ARS INT', '10', '10', '1', '1', '2021-08-28', 'meminjam'),
+(' 0000000002', ' 0000000002', 'Test', 'SMPN 13 Bandungg', '10', '10', '1', '1', '2021-08-28', 'meminjam');
 
 -- --------------------------------------------------------
 
@@ -105,7 +114,31 @@ CREATE TABLE `daftar_pengajuan` (
 --
 
 INSERT INTO `daftar_pengajuan` (`kode_pengajuan`, `nama_barang`, `nama_sekolah`, `qty`, `tanggal`, `keterangan`, `status`) VALUES
-(2, 'Laptop', 'SMPN 4 Bandung', '6', '2021-08-27', 'asad', '1');
+(2, 'Laptop', 'SMPN 4 Bandung', '6', '2021-08-27', 'asad', '1'),
+(3, 'Laptop', 'SMPN 13 Bandungg', '10', '2021-08-28', 'Test', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `daftar_pengembalian`
+--
+
+CREATE TABLE `daftar_pengembalian` (
+  `id_pengembalian` varchar(100) NOT NULL,
+  `id_peminjaman` varchar(225) NOT NULL,
+  `nama_sekolah` varchar(225) NOT NULL,
+  `kode_alat` varchar(255) NOT NULL,
+  `tanggal_kembali` varchar(255) NOT NULL,
+  `status` enum('0','1') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `daftar_pengembalian`
+--
+
+INSERT INTO `daftar_pengembalian` (`id_pengembalian`, `id_peminjaman`, `nama_sekolah`, `kode_alat`, `tanggal_kembali`, `status`) VALUES
+(' 0000000001', ' 0000000001', 'SMK MVP ARS INT', ' 0000000001', '2021-08-28', '1'),
+(' 0000000002', ' 0000000002', 'SMPN 13 Bandungg', ' 0000000002', '2021-08-28', '1');
 
 -- --------------------------------------------------------
 
@@ -148,7 +181,8 @@ CREATE TABLE `sekolah` (
 INSERT INTO `sekolah` (`id_sekolah`, `nama_sekolah`, `alamat`) VALUES
 (1, 'SMPN 5 Bandung', 'Jalan Cicadas Pasar 1 No 54'),
 (2, 'SMPN 4 Bandung', 'Jalan Cicadas Pasar 1 No 51'),
-(3, 'SMK MVP ARS INT', 'Jalan Cicadas Pasar 1 No 54');
+(3, 'SMK MVP ARS INT', 'Jalan Cicadas Pasar 1 No 54'),
+(4, 'SMPN 13 Bandungg', 'Jalan Cicadas Pasar 1 No 54');
 
 -- --------------------------------------------------------
 
@@ -207,12 +241,6 @@ INSERT INTO `view` (`id_view`, `id_sekolah`, `tanggal`, `kategori`, `jumlah_bara
 --
 
 --
--- Indexes for table `daftar_alat`
---
-ALTER TABLE `daftar_alat`
-  ADD PRIMARY KEY (`kode_alat`);
-
---
 -- Indexes for table `daftar_barang`
 --
 ALTER TABLE `daftar_barang`
@@ -225,10 +253,23 @@ ALTER TABLE `daftar_pekerjaan`
   ADD PRIMARY KEY (`kode_pekerjaan`);
 
 --
+-- Indexes for table `daftar_peminjaman`
+--
+ALTER TABLE `daftar_peminjaman`
+  ADD PRIMARY KEY (`id_peminjaman`);
+
+--
 -- Indexes for table `daftar_pengajuan`
 --
 ALTER TABLE `daftar_pengajuan`
   ADD PRIMARY KEY (`kode_pengajuan`);
+
+--
+-- Indexes for table `daftar_pengembalian`
+--
+ALTER TABLE `daftar_pengembalian`
+  ADD PRIMARY KEY (`id_pengembalian`),
+  ADD KEY `id_peminjaman` (`id_peminjaman`);
 
 --
 -- Indexes for table `login`
@@ -254,11 +295,6 @@ ALTER TABLE `view`
 --
 
 --
--- AUTO_INCREMENT for table `daftar_alat`
---
-ALTER TABLE `daftar_alat`
-  MODIFY `kode_alat` int(10) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `daftar_pekerjaan`
 --
 ALTER TABLE `daftar_pekerjaan`
@@ -267,7 +303,7 @@ ALTER TABLE `daftar_pekerjaan`
 -- AUTO_INCREMENT for table `daftar_pengajuan`
 --
 ALTER TABLE `daftar_pengajuan`
-  MODIFY `kode_pengajuan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `kode_pengajuan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tb_informasi`
 --
@@ -278,6 +314,16 @@ ALTER TABLE `tb_informasi`
 --
 ALTER TABLE `view`
   MODIFY `id_view` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `daftar_pengembalian`
+--
+ALTER TABLE `daftar_pengembalian`
+  ADD CONSTRAINT `daftar_pengembalian_ibfk_1` FOREIGN KEY (`id_peminjaman`) REFERENCES `daftar_peminjaman` (`id_peminjaman`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -2,21 +2,28 @@
 ob_start();
 include '../../inc/koneksi.php';
 
-$ID     	   		=$_POST['id_inventaris'];
-$NIS     	     	=$_POST['NIS'];
-$KODE     	   		=$_POST['kode_barang'];
-$QYT 				=$_POST['qty_pinjam'];
-$PINJAM				=$_POST['tanggal_pinjam'];
-$KEMBALI			=$_POST['tanggal_kembali'];
-$status				=$_POST['STATUS'];
+$ID     	   		=$_POST['id_peminjaman'];
+$NIS     	     	=$_POST['kode_alat'];
+$KODE     	   		=$_POST['nama_alat'];
+$NS     	   		=$_POST['nama_sekolah'];
+$QYT 				=$_POST['stok_awal'];
+$PINJAM				=$_POST['stok_akhir'];
+$KEMBALI			=$_POST['alat_masuk'];
+$AK			=$_POST['alat_keluar'];
+$TGL			=$_POST['tanggal'];
+$KET			=$_POST['keterangan'];
+
 
 if ($ID==""  || 
 	$NIS==""  || 
 	$KODE==""||
+	$NS==""||
 	$QYT==""||
 	$PINJAM==""||
 	$KEMBALI==""||
-	$status=="0") {
+	$AK==""||
+	$TGL==""||
+	$KET=="") {
 ?>
 
 <div class='alert alert-danger' role='alert'>
@@ -30,14 +37,17 @@ if ($ID==""  ||
 	}
 	else
 	{
-	$QUERY1=mysqli_query($koneksi,"INSERT INTO inventaris SET 
-	id_inventaris	='$ID',
-	NIS		='$NIS',
-	kode_barang	='$KODE',
-	qty_pinjam	='$QYT',
-	tanggal_pinjam	='$PINJAM',
-	tanggal_kembali	='$KEMBALI',
-	STATUS			='$status'
+	$QUERY1=mysqli_query($koneksi,"INSERT INTO daftar_peminjaman SET 
+	id_peminjaman	='$ID',
+	kode_alat		='$NIS',
+	nama_alat	='$KODE',
+	nama_sekolah	='$NS',
+	stok_awal	='$QYT',
+	stok_akhir	='$PINJAM',
+	alat_masuk	='$KEMBALI',
+	alat_keluar	='$AK',
+	tanggal	='$TGL',
+	keterangan	='$KET'
 	;")
 		or die('Gagal Memasukan Data Baru'.mysqli_error($koneksi));
 		

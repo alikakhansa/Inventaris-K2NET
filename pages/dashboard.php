@@ -8,8 +8,18 @@
    $query_statistik3   = mysqli_query($koneksi,"SELECT count(*) AS total_user FROM login");
    $data_statistik3    = mysqli_fetch_array($query_statistik3);
    
-   $query_statistik4   = mysqli_query($koneksi,"SELECT count(*) AS total_stok_alat FROM daftar_alat");
+   $query_statistik4   = mysqli_query($koneksi,"SELECT count(*) AS total_peminjaman FROM daftar_peminjaman");
    $data_statistik4    = mysqli_fetch_array($query_statistik4);
+
+   $query_statistik5   = mysqli_query($koneksi,"SELECT count(*) AS total_pengembalian FROM daftar_pengembalian");
+   $data_statistik5    = mysqli_fetch_array($query_statistik5);
+
+   $query_statistik6   = mysqli_query($koneksi,"SELECT count(*) AS total_pekerjaan FROM daftar_pekerjaan");
+   $data_statistik6    = mysqli_fetch_array($query_statistik6);
+
+   $query_statistik7   = mysqli_query($koneksi,"SELECT count(*) AS total_pengajuan FROM daftar_pengajuan");
+   $data_statistik7    = mysqli_fetch_array($query_statistik7);
+    
    
    ?>
 <div class="page-wrapper">
@@ -51,7 +61,7 @@
                                               <div class='col-6 ml-auto align-self-center text-center'>
                                                   <div class='m-l-10 text-info-50 float-right'>
                                                       
-                                                      <p class='mb-0 '><a href='index.php?page=barang'>DATA BARANG</p></a>  <br> 
+                                                      <p class='mb-0 '><a href='index.php?page=barang'>STOK BARANG</p></a>  <br> 
                                                     <h4 class='mb-0'>".$data_statistik1['total_barang']."</h4>                                                              
                                                   </div>
                                               </div>
@@ -108,14 +118,14 @@
                                           <div class='d-flex row'>
                                               <div class='col-3 align-self-center'>
                                                   <div class='round'>
-                                                      <i class='fa fa-cog text-primary'></i>
+                                                      <i class='fa fa-upload text-primary'></i>
                                                   </div>
                                               </div>
                                               <div class='col-6 ml-auto align-self-center text-center'>
                                                   <div class='m-l-10 text-black-50 float-right'>
                                                      
-                                                      <p class='mb-0 '><a href='index.php?page=alat'>DATA ALAT</p></a><br>
-                                                      <h4 class='mb-0'>".$data_statistik4['total_stok_alat']."</h4>                                                                   
+                                                      <p class='mb-0 '><a href='index.php?page=pinjam'>DATA PEMINJAMAN</p></a><br>
+                                                      <h4 class='mb-0'>".$data_statistik4['total_peminjaman']."</h4>                                                                   
                                                   </div>
                                               </div>
                                           </div>
@@ -123,6 +133,69 @@
                                   </div>
                               </div>
                           </div>
+                          <div class='row'>      
+                          <div class='col-md-6 col-xl-3'>
+                          <div class='card m-b-30'>
+                              <div class='card-body '>
+                                  <div class='d-flex row'>
+                                      <div class='col-3 align-self-center'>
+                                          <div class='round'>
+                                              <i class='fa fa-download text-primary'></i>
+                                          </div>
+                                      </div>
+                                      <div class='col-6 ml-auto align-self-center text-center'>
+                                          <div class='m-l-10 text-black-50 float-right'>
+                                             
+                                              <p class='mb-0 '><a href='index.php?page=kembali'>DATA PENGEMBALIAN</p></a><br>
+                                              <h4 class='mb-0'>".$data_statistik5['total_pengembalian']."</h4>                                                                   
+                                              </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+            
+                              <div class='col-md-12 col-xl-3'>
+                                  <div class='card m-b-30'>
+                                      <div class='card-body '>
+                                          <div class='d-flex row'>
+                                              <div class='col-3 align-self-center'>
+                                                  <div class='round'>
+                                                      <i class='fa fa-calendar-check-o text-primary'></i>
+                                                  </div>
+                                              </div>
+                                              <div class='col-6 ml-auto align-self-center text-center'>
+                                                  <div class='m-l-10 text-info-50 float-right'>
+                                                     
+                                                      <p class='mb-0 '><a href='index.php?page=pekerjaan'>DATA PEKERJAAN</p></a>   <br>
+                                                      <h4 class='mb-0'>".$data_statistik6['total_pekerjaan']."</h4>                                                               
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class='col-md-12 col-xl-3'>
+                              <div class='card m-b-30'>
+                                  <div class='card-body '>
+                                      <div class='d-flex row'>
+                                          <div class='col-3 align-self-center'>
+                                              <div class='round'>
+                                                  <i class='fa fa-commenting-o text-primary'></i>
+                                              </div>
+                                          </div>
+                                          <div class='col-6 ml-auto align-self-center text-center'>
+                                              <div class='m-l-10 text-black-50 float-right'>
+                                                 
+                                                  <p class='mb-0 '><a href='index.php?page=pengajuan'>DATA PENGAJUAN</p></a><br> 
+                                                  <h4 class='mb-0'>".$data_statistik7['total_pengajuan']."</h4>                                                                
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+               
                           ";
                       }else if ($_SESSION['level']== "admin") 
                       {
@@ -221,6 +294,69 @@
                                   </div>
                               </div>
                           </div>
+                          <div class='col-md-12 col-xl-3'>
+                          <div class='card m-b-30'>
+                              <div class='card-body '>
+                                  <div class='d-flex row'>
+                                      <div class='col-3 align-self-center'>
+                                          <div class='round'>
+                                              <i class='fa fa-cog text-primary'></i>
+                                          </div>
+                                      </div>
+                                      <div class='col-6 ml-auto align-self-center text-center'>
+                                          <div class='m-l-10 text-black-50 float-right'>
+                                             
+                                              <p class='mb-0 '><a href='index.php?page=kembali'>DATA PENGEMBALIAN</p></a><br>
+                                              <h4 class='mb-0'>".$data_statistik5['total_pengembalian']."</h4>                                                                   
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  
+                  <div class='col-md-12 col-xl-3'>
+                  <div class='card m-b-30'>
+                      <div class='card-body '>
+                          <div class='d-flex row'>
+                              <div class='col-3 align-self-center'>
+                                  <div class='round'>
+                                      <i class='fa fa-calendar-check-o text-primary'></i>
+                                  </div>
+                              </div>
+                              <div class='col-6 ml-auto align-self-center text-center'>
+                                  <div class='m-l-10 text-info-50 float-right'>
+                                     
+                                      <p class='mb-0 '><a href='index.php?page=pekerjaan'>DATA PEKERJAAN</p></a>   <br>
+                                      <h4 class='mb-0'>".$data_statistik6['total_pekerjaan']."</h4>                                                               
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class='col-md-12 col-xl-3'>
+              <div class='card m-b-30'>
+                  <div class='card-body '>
+                      <div class='d-flex row'>
+                          <div class='col-3 align-self-center'>
+                              <div class='round'>
+                                  <i class='fa fa-commenting-o text-primary'></i>
+                              </div>
+                          </div>
+                          <div class='col-6 ml-auto align-self-center text-center'>
+                              <div class='m-l-10 text-black-50 float-right'>
+                                 
+                                  <p class='mb-0 '><a href='index.php?page=pengajuan'>DATA PENGAJUAN</p></a><br> 
+                                  <h4 class='mb-0'>".$data_statistik7['total_pengajuan']."</h4>                                                                
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
                           ";
                           
                       

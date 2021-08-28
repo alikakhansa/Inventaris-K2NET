@@ -27,73 +27,74 @@ function cekform(){
             <div class="col-md-10">
                 <div class="card m-b-30">
                  <div class="card-body">
-                    <h3>Kembalikan Barang</h3>
+                    <h3>Pengembalian Barang</h3>
                      
                     <form  action="../pages/Kembali/proses_tambah.php" method="POST" name="autoSumForm" enctype="multipart/form-data" onSubmit="return cekform()">
                    	<div class="form-group">
-                        <label>Id Kembali</label>
-                        <input class="form-control" type="text" name="id_pengembalian">
+                        <label>Id Pengembalian</label>
+                        <input class="form-control" type="text" name="id_pengembalian"value=" <?php echo autonumber("daftar_pengembalian", "id_pengembalian", 10, ""); ?>" required readonly>
  
-                    </div>        
-                     <div class="form-group">
-                        <label>Id Inventaris
-						<?php  
-						include '../inc/koneksi.php';
-						$hasil = mysqli_query($koneksi,"SELECT * from inventaris inner join daftar_barang on(inventaris.kode_barang=daftar_barang.kode_barang) 
-						inner join master_siswa on(inventaris.NIS=master_siswa.NIS) order by inventaris.id_inventaris asc");  
-						$jsArray = "var Nama_prd1 = new Array();";  
-						echo '<select name="id_inventaris" onchange="changeValue(this.value)" id="id" class="form-control mb-1 custom-select">';  
-						echo '<option>-PILIH ID INVENTARIS-</option>';  
-						while ($row = mysqli_fetch_array($hasil)) {  
-						    echo '<option value="'. $row['id_inventaris'].'">' . $row['id_inventaris'] . '</option>';  
-						    $jsArray .= "Nama_prd1['". $row['id_inventaris']."'] = {name0:'". addslashes($row['NIS']) . "',
-						    name:'". addslashes($row['nama']) . "', name1:'". addslashes($row['kode_barang'])."', 
-							name2:'". addslashes($row['nama_barang']). "', name3:'". addslashes($row['qty_pinjam']) ."',
-							name4:'". addslashes($row['tanggal_pinjam'])."', name5:'". addslashes($row['tanggal_kembali'])."'};";  
-						}  
-						echo '</select>';  
-						?></label><script type="text/javascript">
-						            <?php echo $jsArray; ?>
-						function changeValue(id){
-						document.getElementById('NIS').value = Nama_prd1[id].name0;
-						document.getElementById('nama').value = Nama_prd1[id].name;
-						document.getElementById('kode_barang').value = Nama_prd1[id].name1;
-						document.getElementById('nama_barang').value = Nama_prd1[id].name2;
-						document.getElementById('qty_pinjam').value = Nama_prd1[id].name3;
-						document.getElementById('tanggal_pinjam').value = Nama_prd1[id].name4;
-						document.getElementById('tanggal_kembali').value = Nama_prd1[id].name5;
+                    </div>      
+                    
+                    <div class="form-group">
+            <label><b>Id Peminjaman</label></b>
+            <select class="select2 form-control mb-1 custom-select" style="width: 100%; height:36px;" name="id_peminjaman" id="id_peminjaman">
+               <option value="" class="form-control">Please Select ID Peminjaman</option>
+               <?php
+                  $query = mysqli_query($koneksi,"SELECT * FROM daftar_peminjaman group by id_peminjaman");
+                  while ($row = mysqli_fetch_array($query)) {
+                  ?>
+               <option id="id_peminjaman" value="<?php echo $row['id_peminjaman']; ?>">
+                  <?php echo $row['id_peminjaman']; ?> - <?php  echo $row['nama_sekolah']; ?>
+               </option>
+               <?php
+                  }
+                   ?>
+            </select>
+         </div>  
+                    
+                    <div class="form-group">
+            <label><b>Nama Sekolah</label></b>
+            <select class="select2 form-control mb-1 custom-select" style="width: 100%; height:36px;" name="nama_sekolah" id="nama_sekolah">
+               <option value="" class="form-control">Please Select Nama Sekolah</option>
+               <?php
+                  $query = mysqli_query($koneksi,"SELECT * FROM sekolah group by nama_sekolah");
+                  while ($row = mysqli_fetch_array($query)) {
+                  ?>
+               <option id="id_sekolah" value="<?php echo $row['nama_sekolah']; ?>">
+                  <?php echo $row['nama_sekolah']; ?> - <?php  echo $row['id_sekolah']; ?>
+               </option>
+               <?php
+                  }
+                   ?>
+            </select>
+         </div>
+                        
+         <div class="form-group">
+            <label><b>Kode Alat</label></b>
+            <select class="select2 form-control mb-1 custom-select" style="width: 100%; height:36px;" name="kode_alat" id="kode_alat">
+               <option value="" class="form-control">Please Select Kode Alat</option>
+               <?php
+                  $query = mysqli_query($koneksi,"SELECT * FROM daftar_peminjaman group by kode_alat");
+                  while ($row = mysqli_fetch_array($query)) {
+                  ?>
+               <option id="kode_alat" value="<?php echo $row['kode_alat']; ?>">
+                  <?php echo $row['kode_alat']; ?> - <?php  echo $row['nama_alat']; ?>
+               </option>
+               <?php
+                  }
+                   ?>
+            </select>
+         </div>
 
-
-						};
-
-</script></div><p>
-                        <div class="form-group">
-                            <label>Peminjam</label>
-                            <input class="form-control mb-1 custom-select" name="NIS" id="NIS" readonly>
-                            <input class="form-control mb-1 custom-select" name="nama" id="nama" readonly>
-                            <label>Barang Yang Dipinjam</label>
-                            <input class="form-control mb-1 custom-select" name="kode_barang" id="kode_barang" readonly>
-                            <input class="form-control mb-1 custom-select" name="nama_barang" id="nama_barang" readonly>
-                            <label> Qty Pinjam</label>
-                            <input class="form-control mb-1 custom-select" name="qty_pinjam" id="qty_pinjam" readonly>
-                            <label> Tanggal Pinjam</label>
-                            <input class="form-control mb-1 custom-select" name="tanggal_pinjam" id="tanggal_pinjam" readonly>
-                            <label> Tanggal Kembali</label>
-                            <input class="form-control mb-1 custom-select" name="tanggal_kembali" id="tanggal_kembali" readonly>
-                            
-                        </div> 
-                        <div class="form-group">
-                            <label>Tanggal Dikembalikan</label>
-							<div>
-	                            <div class="input-group">
-	                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span><div class="input-group-append bg-custom b-0"></div>
-	                                <input type="date" class="form-control" placeholder="mm/dd/yyyy" name="tanggal_kembali">
-	                            </div><!-- input-group -->
-	                        </div>
-                       </div>
+                    <div class="form-group">
+                        <label>Tanggal</label>
+                        <input class="form-control" type="date" name="tanggal_kembali">
+ 
+                    </div>  
                        <div class="form-group" hidden>
                             <label>STATUS</label>
-                            <input class="form-control" type="" name="STATUS">
+                            <input class="form-control" type="" name="status">
                        </div>
                        		<link href="../assets/plugins/timepicker/bootstrap-material-datetimepicker.css" rel="stylesheet">
                             <script src="../assets/js/jquery-1.10.2.min.js"></script>
@@ -107,7 +108,8 @@ function cekform(){
                                 
                             </script>
                                 <div>
-                                    <input type="submit" name="add" value="Add" class="btn btn-primary">
+                                    <input type="submit" name="add" value="Simpan" class="btn btn-primary">
+                                    <a href="../operator/index.php?page=kembali" class="btn btn-danger">Kembali</a>
                                 </div>
                          
                         </form>

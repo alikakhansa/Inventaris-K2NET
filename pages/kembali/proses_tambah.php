@@ -4,15 +4,17 @@ include '../../inc/koneksi.php';
 
 
 $ID_KEMBALI			=$_POST['id_pengembalian'];
-$ID     	   		=$_POST['id_inventaris'];
-$NIS     	     	=$_POST['NIS'];
-$KODE     	   		=$_POST['kode_barang'];
-$status				=$_POST['STATUS'];
+$ID     	   		=$_POST['id_peminjaman'];
+$NIS     	     	=$_POST['nama_sekolah'];
+$KODE     	   		=$_POST['kode_alat'];
+$TGL     	   		=$_POST['tanggal_kembali'];
+$status				=$_POST['status'];
 
 if ($ID_KEMBALI==""  ||
 	$ID==""  || 
 	$NIS==""  ||
 	$KODE==""|| 
+	$TGL==""|| 
 	$status== 1 ) {
 ?>
 
@@ -27,16 +29,17 @@ if ($ID_KEMBALI==""  ||
 	}
 	else
 	{
-	$QUERY1=mysqli_query($koneksi,"INSERT INTO kembali SET
+	$QUERY1=mysqli_query($koneksi,"INSERT INTO daftar_pengembalian SET
 	id_pengembalian		='$ID_KEMBALI',	 
-	id_inventaris	='$ID',
-	NIS		='$NIS',
-	kode_barang	='$KODE',
-	STATUS			='$status'
+	id_peminjaman	='$ID',
+	nama_sekolah		='$NIS',
+	kode_alat	='$KODE',
+	tanggal_kembali	='$TGL',
+	status			='$status'
 	;")
 		or die('Gagal Memasukan Data Baru'.mysqli_error($koneksi));
 		
-	$QUERY2=mysqli_query($koneksi, "UPDATE kembali SET
+	$QUERY2=mysqli_query($koneksi, "UPDATE daftar_pengembalian SET
 		STATUS = '1'
 		")
 ?>

@@ -85,15 +85,15 @@
                      <li class="submenu">
                         <a href="#"><i class="fa fa-cog"></i> <span> Data Alat </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
-                           <li><?php if ($PAGE=="barang") { ?> <?php  } ?>
-                              <?php if ($PAGE=="pinjam") { ?> <?php  } ?>
+                        <li><?php if ($PAGE=="pinjam") { ?> <?php  } ?>
                               <a href="?page=pinjam">Peminjaman</a>
                            </li>
                            <li>
-                           <li <?php if ($PAGE=="kembali") { ?> class="active" <?php  } ?>>
-                              <a href="?page=kembali">Pengembalian</a>
+                           <li><?php if ($PAGE=="kembali") { ?> <?php  } ?>
+                           <a href="?page=kembali">Pengembalian</a></li>
                         </ul>
                      </li>
+
                      <li <?php if ($PAGE=="pekerjaan") { ?> class="active" <?php  } ?>>
                         <a href="?page=pekerjaan"><i class="fa fa-calendar-check-o"></i> <span>Data Pekerjaan</span></a>
                      </li>
